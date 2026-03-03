@@ -1,6 +1,8 @@
- TermArduino 🌡️
+# TermArduino 🌡️
+
 Este projeto faz o monitoramento de temperatura usando Arduino, o sensor DS18B20 e um servidor Flask em Python.
 O Arduino lê a temperatura através do DS18B20 e envia os dados pela porta serial. O Flask recebe essas leituras e disponibiliza em tempo real via API e interface web com gráfico dinâmico.
+
 
 *Funcionalidades*
 - Leitura contínua da temperatura via DS18B20 conectado ao Arduino.
@@ -9,6 +11,7 @@ O Arduino lê a temperatura através do DS18B20 e envia os dados pela porta seri
    - Temperatura em Celsius, Fahrenheit e Kelvin.
    - Gráfico em tempo real com histórico das últimas leituras.
    - Atualização automática a cada segundo.
+     
 
 *Estrutura do projeto*
 - app.py: servidor Flask que gerencia rotas e integra com a leitura serial.
@@ -17,6 +20,7 @@ O Arduino lê a temperatura através do DS18B20 e envia os dados pela porta seri
 - static/conversor.js: lógica frontend para atualizar valores e desenhar o gráfico.
 - arduino/: pasta contendo o código do Arduino para leitura do DS18B20.
 - README.md: documentação do projeto.
+  
 
 *Instalação*
 1. Clone o repositório:
@@ -27,21 +31,25 @@ O Arduino lê a temperatura através do DS18B20 e envia os dados pela porta seri
    - .venv\Scripts\Activate.ps1   # no PowerShell
 3. Instale as dependências:
    - pip install -r requirements.txt
+   
 
 *Dependências*
 - Flask
 - pyserial
+  
   Essas bibliotecas estão listadas no requirements.txt.
+  
 
 *Código do Arduino*
+
 Para que o projeto funcione corretamente, é necessário enviar o código para o Arduino utilizando a Arduino IDE.  
-O código está disponível dentro da pasta arduino/ do projeto.
+ O código está disponível dentro da pasta arduino/ do projeto.
 
 - Bibliotecas necessárias
 Antes de compilar e enviar o código, instale as seguintes bibliotecas na Arduino IDE:
-
-- OneWire → usada para comunicação com o sensor DS18B20.  
-- DallasTemperature → facilita a leitura da temperatura a partir do DS18B20.  
+   - OneWire → usada para comunicação com o sensor DS18B20.  
+   - DallasTemperature → facilita a leitura da temperatura a partir do DS18B20.
+     
 
 *Execução*
 1. Conecte o Arduino na porta correta (ex.: COM6 no Windows).
@@ -50,11 +58,13 @@ Antes de compilar e enviar o código, instale as seguintes bibliotecas na Arduin
    - python app.py
 4. Abra no navegador:
    - http://127.0.0.1:5000/
+     
   
 *Uso*
 - A página inicial mostra a temperatura atual em três unidades.
 - O gráfico exibe as últimas 20 leituras.
-- A API pode ser acessada diretamente em:
+- A API pode ser acessada diretamente em: http://127.0.0.1:5000/temperatura
+  
 
 *Hardware utilizado*
 - Arduino Uno (ou compatível)
@@ -62,6 +72,7 @@ Antes de compilar e enviar o código, instale as seguintes bibliotecas na Arduin
 - Dois resistores de 10kΩ em paralelo (equivalem a ~5kΩ)
 - Recomendação: usar resistor de 4,7kΩ como pull-up, que é o valor mais indicado para o DS18B20
 - Protoboard e cabos jumper
+  
 
 *Observações*
 - Certifique-se de que o Arduino está enviando apenas valores numéricos pela serial.
