@@ -33,6 +33,16 @@ O Arduino lê a temperatura através do DS18B20 e envia os dados pela porta seri
 - pyserial
   Essas bibliotecas estão listadas no requirements.txt.
 
+*Código do Arduino*
+Para que o projeto funcione corretamente, é necessário enviar o código para o Arduino utilizando a Arduino IDE.  
+O código está disponível dentro da pasta arduino/ do projeto.
+
+- Bibliotecas necessárias
+Antes de compilar e enviar o código, instale as seguintes bibliotecas na Arduino IDE:
+
+- OneWire → usada para comunicação com o sensor DS18B20.  
+- DallasTemperature → facilita a leitura da temperatura a partir do DS18B20.  
+
 *Execução*
 1. Conecte o Arduino na porta correta (ex.: COM6 no Windows).
 2. Envie o código para o Arduino usando a Arduino IDE (o código está na pasta arduino/).
