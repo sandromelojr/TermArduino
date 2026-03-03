@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Monitor de Temperatura</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        background: #111;
+        color: white;
+        text-align: center;
+        font-family: "Times New Roman", Times, serif;
+      }
+      h1 {
+        color: #00ffc3;
+      }
+      h2 {
+        color: #ffcc00;
+      }
+      canvas {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Temperatura</h1>
+    <h2 id="celsius">-- °C</h2>
+    <h2 id="fahrenheit">-- °F</h2>
+    <h2 id="kelvin">-- K</h2>
+    <canvas id="grafico"></canvas>
+
+    <!-- Carregar o JS só depois que o HTML estiver pronto -->
+    <script src="{{ url_for('static', filename='conversor.js') }}"></script>
+  </body>
+</html>
